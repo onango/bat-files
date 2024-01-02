@@ -1,7 +1,28 @@
 @echo off
 
-rem Specify the URL you want to open
-set url=http://coincap.wuaze.com/
+rem Specify the URLs
+set url1=https://www.google.com/search?q=time
+set url2=https://www.google.com/search?q=date
+set url3=https://www.google.com/search?q=holiday
+set url4=http://coincap.wuaze.com/
 
-rem Open Chrome with the specified URL
-start chrome "%url%"
+rem Open Chrome with the specified URLs
+start chrome "%url1%"
+timeout /t 5 /nobreak >nul
+
+rem Close Chrome
+taskkill /F /IM chrome.exe
+
+start chrome "%url2%"
+timeout /t 5 /nobreak >nul
+
+start chrome "%url3%"
+timeout /t 5 /nobreak >nul
+
+start chrome "%url4%"
+
+rem Allow some time for Chrome to open the tabs
+timeout /t 15 /nobreak >nul
+
+rem Close Chrome
+taskkill /F /IM chrome.exe
