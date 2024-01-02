@@ -23,6 +23,3 @@ start chrome "%url4%"
 
 rem Allow some time for Chrome to open the tabs
 timeout /t 15 /nobreak >nul
-
-rem Close Chrome
-taskkill /F /IM chrome.exe
